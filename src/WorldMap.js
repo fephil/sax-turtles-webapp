@@ -7,7 +7,7 @@ class SplashScreen extends Component {
     render() {
         return (
             <section>
-                <div>show me what you go!</div>
+                <div>show me what you got!</div>
             </section>
         )
     }
