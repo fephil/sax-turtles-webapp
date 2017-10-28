@@ -33,7 +33,7 @@ class SplashScreen extends Component {
 
                     <Route render={({ history}) => (
                         <button type='button' className='button' onClick={ this.handleClick.bind(this, history)}>
-                            Ok!
+                            OK!
                         </button>
                     )} /> 
                     <div className="speechtail"></div>
