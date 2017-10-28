@@ -6,9 +6,7 @@ import './App.css';
 class SplashScreen extends Component {
     render() {
         return (
-            <section>
-                <div>show me what you got!</div>
-            </section>
+            <section class="game-section game-section--world-map"></section>
         )
     }
 }
