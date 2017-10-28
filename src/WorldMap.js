@@ -4,6 +4,7 @@ import React, {
 import './App.css';
 import worldMap from './worldmap.jpg';
 import levelicon from './levelicon.gif';
+import character from './viking.gif';
 // import leveliconcomplete from './leveliconcomplete.gif';
 
 class WorldMap extends Component {
@@ -31,6 +32,10 @@ class WorldMap extends Component {
             <section class="game-section">
                 <div className='level-overlay'>
                     <div className='level-overlay-inner'>
+                        <img src={character} alt='character' className='map-character' style={{
+                            top: '30px',
+                            left: '157px'
+                        }} />
                         <img src={levelicon} alt='level icon' className='level-icon' style={{
                             top: '105px',
                             left: '204px'

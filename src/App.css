@@ -133,6 +133,15 @@ body {
   background-position: center center;
 }
 
+.map-character {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 150px;
+  transform: scaleX(-1);
+  z-index: 100;
+}
+
 /* IE 10 / Chrome */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
