@@ -1,20 +1,35 @@
-sudo: false
+# sudo: false
+# language: node_js
+# cache:
+#   directories:
+#     - node_modules
+# notifications:
+#   email: false
+# node_js:
+#   - '8'
+#   - '7'
+# install:
+#   - npm install
+# before_script:
+#   - npm prune
+# script: 
+#   - npm run build
+# before_deploy:
+#   - cd build
+# deploy:
+#   provider: azure_web_apps
+
 language: node_js
-cache:
-  directories:
-    - node_modules
-notifications:
-  email: false
-node_js:
-  - '8'
-  - '7'
+node_js: stable
+sudo: required
+dist: trusty
 install:
   - npm install
-before_script:
-  - npm prune
-script: 
+script:
   - npm run build
 before_deploy:
   - cd build
 deploy:
   provider: azure_web_apps
+  skip_cleanup: true
+  verbose: true
