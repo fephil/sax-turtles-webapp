@@ -8,6 +8,9 @@ class LevelOneInputTicker extends Component {
 
     constructor(props) {
         super(props);
+
+        console.log(props);
+
         this.state = {
             inputValue: 'a',
             inputValueSet: false,
@@ -35,6 +38,11 @@ class LevelOneInputTicker extends Component {
                 inputInterval: clearInterval(prevState.inputInterval)
             }
         });
+
+        var { inputIndex } = this.props;
+        var { inputValue } = this.state;
+
+        this.props.onChange(inputValue, inputIndex);        
     }
 
     getRandomLetterFromAlphabet() {    
@@ -47,7 +55,7 @@ class LevelOneInputTicker extends Component {
 
     render() {
         return (
-            <input type='text' onClick={this.freezeInputValue.bind(this)} onChange={() => {}} value={this.state.inputValue} readOnly/>
+            <input type='text' onClick={this.freezeInputValue.bind(this)} onChange={() => {}} value={this.state.inputValue} readOnly />
         )
     }
 }
