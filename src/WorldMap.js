@@ -5,13 +5,37 @@ import './App.css';
 import worldMap from './worldmap.jpg';
 import levelicon from './levelicon.gif';
 import character from './viking.gif';
+import apiService from './apiService';
 // import leveliconcomplete from './leveliconcomplete.gif';
 
 class WorldMap extends Component {
-    
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            gameId: '',
+            currentLevel: '',
+            levels: []
+        }
+    }
+
+    componentDidMount() {
+        apiService
+            .makeStartGameRequest()
+            .then(this.setGameState.bind(this))
+    }
+
+    setGameState(gameData) {
+        this.setState({
+            gameId: gameData.GameId,
+            currentLevel: gameData.CurrentLevel,
+            levels: gameData.Levels
+        })  
+    }
+
     render() {
         return (
-            <section class="game-section">
+            <section className="game-section">
                 <div className='level-overlay'>
                     <div className='level-overlay-inner'>
                         <img src={character} alt='character' className='map-character' style={{
