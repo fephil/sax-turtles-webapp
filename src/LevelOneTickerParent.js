@@ -57,9 +57,9 @@ class LevelOneTickerParent extends Component {
                         <img src={greatJob} alt='' style={{maxWidth: '800px', marginLeft: '90px'}}/>
                         <img src={vikingThumbsUp} alt='' style={{
                                 position: 'absolute',
-                                maxWidth: '130px',
-                                right: '150px',
-                                top: '110px'
+                                maxWidth: '200px',
+                                right: '80px',
+                                top: '60px'
                         }} />
 
                         <Route render={({ history}) => (
@@ -80,7 +80,7 @@ class LevelOneTickerParent extends Component {
                 {button}
 
                 {/* TODO: Could loop and create these?  */}
-                <LevelOneInputTicker inputIndex={0} onChange={this.onChange.bind(this)} />
+                <LevelOneInputTicker inputIndex={0} isActive={true} onChange={this.onChange.bind(this)} />
                 <LevelOneInputTicker inputIndex={1} onChange={this.onChange.bind(this)} />
                 <LevelOneInputTicker inputIndex={2} onChange={this.onChange.bind(this)} />
                 <LevelOneInputTicker inputIndex={3} onChange={this.onChange.bind(this)} />

@@ -15,6 +15,24 @@
     background-color: #D8D8D8;
     outline: 0;
     border: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.lvl-one-input-outer {
+    display: inline;
+    position: relative;
+}
+
+.lvl-one-input-outer:hover:before {
+    content: '';
+    position: absolute;
+    top: -126px;
+    /* left: 50%; */
+    transform:  scaleX(-1);
+    background-image: url('./vikingsmall.gif');
+    height: 96px;
+    width: 69px;
 }
 
 .lvl-one-button {

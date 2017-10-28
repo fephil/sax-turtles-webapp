@@ -57,7 +57,9 @@ class LevelOneInputTicker extends Component {
 
     render() {
         return (
-            <input type='text' className='lvl-one-input' onClick={this.freezeInputValue.bind(this)} onChange={() => {}} value={this.state.inputValue} readOnly />
+            <div className='lvl-one-input-outer'>
+                <input type='text' className='lvl-one-input' onClick={this.freezeInputValue.bind(this)} onChange={() => {}} value={this.state.inputValue} readOnly />
+            </div>
         )
     }
 }
