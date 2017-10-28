@@ -14,5 +14,7 @@ before_script:
   - npm prune
 script: 
   - npm run build
+before_deploy:
+  - cd build
 deploy:
   provider: azure_web_apps
