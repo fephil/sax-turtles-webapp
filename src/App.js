@@ -1,43 +1,19 @@
-import React, {
-  Component
-} from 'react';
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
+import SplashScreen from './SplashScreen';
+import WorldMap from './WorldMap';
 import './App.css';
 
-class SplashScreen extends Component {
-  constructor(props) {
-    super(props);
+const RouteManager = () => (
+  <Router>
+    <div>
+      <Route exact path="/" component={SplashScreen}/>
+      <Route path="/world-map" component={WorldMap}/>
+    </div>
+  </Router>
+)
 
-    this.state = {
-      showOverlay: false
-    }
-  }
-
-  handleClick() {
-    this.setState({
-      showOverlay: true
-    });
-  }
-
-  render() {
-    return (
-      <section>
-        <div className="speechbubble">
-          This is a test piece of text. This is a test piece of text. 
-          This is a test piece of text. This is a test piece of text.
-          This is a test piece of text. This is a test piece of text. 
-          <button onClick={this.handleClick.bind(this)} className="button">OK!</button>
-        </div>
-
-        <div className="speechtail"></div>
-
-        <div className="floor">
-          <div className="ombudsman"></div>
-        </div>
-        
-        <section className={"overlay " + (this.state.showOverlay ? 'is-shown' : 'is-hidden')}></section>
-      </section>
-    )
-  }
-}
-
-export default SplashScreen
+export default RouteManager
