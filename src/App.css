@@ -1,15 +1,21 @@
 @font-face { font-family: 'AlphaSmart 3000'; src: url('AlphaSmart3000.ttf') }
 
 body {
-  background-color: #A8DBD5;
+  background-image: linear-gradient(-180deg, #56AFA5 0%, #A8DBD5 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #f00;
   margin: 0;
+  height: 100vh;
   font-family: 'AlphaSmart 3000';
-  font-size: 22px;
+  /* font-size: 22px; */
+  /* TODO: Maybe look at this dirty hack */
+  overflow: hidden;
 }
 .floor {
   background-color: #86614C;
   width: 100%;
-  height: 25%;
+  height: 15%;
   position: absolute;
   bottom: 0;
 }
@@ -25,11 +31,12 @@ body {
 
 .speechbubble {
   width: 466px;
-  padding: 40px;
+  padding: 30px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 280px;
   background: white;
   position: relative;
+  font-size: 20px;
 }
 
 .speechtail {
@@ -85,6 +92,111 @@ body {
   animation: 2s ease-in fadeIn;
 }
 
+.logo {
+  /* height: 300px; */
+  max-width: 350px;
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* IE 10 / Chrome */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+.clouds-container {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.cloud {
+  content: url('cloud.svg');
+  height: 120px;
+	position: relative;
+	width: 350px;
+}
+
+@-webkit-keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@-moz-keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+/* ANIMATIONS */
+
+.x1 {
+	-webkit-animation: animateCloud 35s linear infinite;
+	-moz-animation: animateCloud 35s linear infinite;
+	animation: animateCloud 35s linear infinite;
+
+	-webkit-transform: scale(0.65);
+	-moz-transform: scale(0.65);
+	transform: scale(0.65);
+}
+
+.x2 {
+	-webkit-animation: animateCloud 20s linear infinite;
+	-moz-animation: animateCloud 20s linear infinite;
+	animation: animateCloud 20s linear infinite;
+
+	-webkit-transform: scale(0.3);
+	-moz-transform: scale(0.3);
+	transform: scale(0.3);
+}
+
+.x3 {
+	-webkit-animation: animateCloud 30s linear infinite;
+	-moz-animation: animateCloud 30s linear infinite;
+	animation: animateCloud 30s linear infinite;
+
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	transform: scale(0.5);
+}
+
+.x4 {
+	-webkit-animation: animateCloud 18s linear infinite;
+	-moz-animation: animateCloud 18s linear infinite;
+	animation: animateCloud 18s linear infinite;
+
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	transform: scale(0.4);
+}
+
+.x5 {
+	-webkit-animation: animateCloud 25s linear infinite;
+	-moz-animation: animateCloud 25s linear infinite;
+	animation: animateCloud 25s linear infinite;
+
+	-webkit-transform: scale(0.55);
+	-moz-transform: scale(0.55);
+	transform: scale(0.55);
+}

@@ -2,6 +2,7 @@ import React, {
     Component
 } from 'react';
 import './App.css';
+import logo from './logo.svg';
 import {
     Route
 } from 'react-router-dom';
@@ -26,6 +27,28 @@ class SplashScreen extends Component {
     render() {
         return (
             <section>
+                <div className='clouds-container'>
+                <div class="x1">
+                    <div class="cloud"></div>
+                </div>
+
+                <div class="x2">
+                    <div class="cloud"></div>
+                </div>
+
+                <div class="x3">
+                    <div class="cloud"></div>
+                </div>
+
+                <div class="x4">
+                    <div class="cloud"></div>
+                </div>
+
+                <div class="x5">
+                    <div class="cloud"></div>
+                </div>
+                </div>
+                <img alt='Logo' src={logo} className='logo' />
                 <div className="speechbubble">
                 <strong>WELCOME TRAVELLER</strong>
                 <p>I am the OMBUDSMAN and I will help guide you through your COMPLAINT QUEST.</p>
