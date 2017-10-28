@@ -8,25 +8,7 @@ import character from './viking.gif';
 // import leveliconcomplete from './leveliconcomplete.gif';
 
 class WorldMap extends Component {
-    // constructor(props) {
-        // super(props);
-
-        // this.setState({levelPinsData: [
-        //     {
-        //         x: 0,
-        //         y: 0
-        //     },
-        //     {
-        //         x: 10,
-        //         y: 10
-        //     },
-        //     {
-        //         x: 20,
-        //         y: 20
-        //     }
-        // ]});
-    // }
-
+    
     render() {
         return (
             <section class="game-section">
