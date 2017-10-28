@@ -4,17 +4,27 @@ import React, {
 import './App.css';
 import worldMap from './worldmap.jpg';
 
-class SplashScreen extends Component {
+class WorldMap extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {};
+        this.state.levelData = [
+            {
+                x: 0,
+                y: 0
+            }
+        ];
+    }
+
     render() {
         return (
             <section class="game-section">
-                <section className='level-overlay'>
-                    
-                </section>
-                <img src={worldMap} className='world-map' />
+                <div className='level-overlay' />
+                <img src={worldMap} alt='World Map' className='world-map' />
             </section>
         )
     }
 }
 
-export default SplashScreen;
+export default WorldMap;

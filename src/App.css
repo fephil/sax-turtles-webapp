@@ -110,6 +110,14 @@ body {
   right: 0;
 }
 
+.level-overlay {
+  position: absolute;
+  height: 778px;
+  width: 1022px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .game-section--world-map {
   background-image: url('./worldmap.jpg');
   background-size: 100%;
