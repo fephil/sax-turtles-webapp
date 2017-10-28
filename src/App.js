@@ -33,7 +33,6 @@ class SplashScreen extends Component {
         <div className="floor">
           <div className="ombudsman"></div>
         </div>
-        {/* <section className="overlay is-hidden"></section> */}
         
         <section className={"overlay " + (this.state.showOverlay ? 'is-shown' : 'is-hidden')}></section>
       </section>
