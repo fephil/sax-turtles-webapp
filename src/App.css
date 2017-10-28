@@ -1,28 +1,41 @@
-.App {
-  text-align: center;
+@font-face { font-family: 'AlphaSmart 3000'; src: url('AlphaSmart3000.ttf') }
+
+body {
+  background-color: #A8DBD5;
+  margin: 0;
+  font-family: 'AlphaSmart 3000';
+  font-size: 22px;
+}
+.floor {
+  background-color: #86614C;
+  width: 100%;
+  height: 25%;
+  position: absolute;
+  bottom: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.ombudsman {
+  position: relative;
+  background-image:url('viking.gif');
+  top: -200px;
+  left: 60%;
+  width: 346px;
+  height: 346px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.speechbubble {
+  width: 466px;
+  padding: 40px;
+  margin: 0 auto;
+  margin-top: 200px;
+  background: white;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.speechtail {
+  content: url('speechtail.svg');
+  width: 113px;
+  height: 73px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 400px;
 }
