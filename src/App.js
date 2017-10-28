@@ -15,7 +15,7 @@ class SplashScreen extends Component {
           This is a test piece of text. This is a test piece of text. 
           This is a test piece of text. This is a test piece of text.
           This is a test piece of text. This is a test piece of text. 
-          <button onClick={this.handleClick.bind(this)} className="button">ok!</button>
+          <button onClick={this.handleClick.bind(this)} className="button">OK!</button>
         </div>
 
         <div className="speechtail"></div>
