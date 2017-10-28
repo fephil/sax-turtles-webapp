@@ -4,8 +4,18 @@ import React, {
 import './App.css';
 
 class SplashScreen extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showOverlay: false
+    }
+  }
+
   handleClick() {
-    console.log('fade out screen and stuff');
+    this.setState({
+      showOverlay: true
+    });
   }
 
   render() {
@@ -23,6 +33,9 @@ class SplashScreen extends Component {
         <div className="floor">
           <div className="ombudsman"></div>
         </div>
+        {/* <section className="overlay is-hidden"></section> */}
+        
+        <section className={"overlay " + (this.state.showOverlay ? 'is-shown' : 'is-hidden')}></section>
       </section>
     )
   }

@@ -64,3 +64,26 @@ body {
   box-shadow: none;
   transform: translate(-60%, 8px);
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+}
+
+.overlay.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.overlay.is-shown {
+  animation-play-state: running;
+  animation: 2s ease-in fadeIn;
+}
+
+/* IE 10 / Chrome */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
