@@ -118,6 +118,15 @@ body {
   transform: translateX(-50%);
 }
 
+.level-overlay-inner {
+  position: relative;
+  height: 100%;
+}
+
+.level-icon {
+  position: absolute;
+}
+
 .game-section--world-map {
   background-image: url('./worldmap.jpg');
   background-size: 100%;
