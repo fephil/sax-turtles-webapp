@@ -27,18 +27,18 @@ class SplashScreen extends Component {
         return (
             <section>
                 <div className="speechbubble">
-                    This is a test piece of text. This is a test piece of text. 
-                    This is a test piece of text. This is a test piece of text.
-                    This is a test piece of text. This is a test piece of text.
+                <strong>WELCOME TRAVELLER</strong>
+                <p>I am the OMBUDSMAN and I will help guide you through your COMPLAINT QUEST.</p>
+                <p>We know complaining sucks, so we’ve made it fun. Good luck!</p>
 
                     <Route render={({ history}) => (
                         <button type='button' className='button' onClick={ this.handleClick.bind(this, history)}>
                             Ok!
                         </button>
                     )} /> 
+                    <div className="speechtail"></div>
                 </div>
 
-                <div className="speechtail"></div>
 
                 <div className="floor">
                     <div className="ombudsman"></div>

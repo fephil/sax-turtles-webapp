@@ -27,17 +27,18 @@ body {
   width: 466px;
   padding: 40px;
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 100px;
   background: white;
+  position: relative;
 }
 
 .speechtail {
   content: url('speechtail.svg');
   width: 113px;
   height: 73px;
-  position: relative;
+  position: absolute;
   margin: 0 auto;
-  margin-top: 400px;
+  right: 0;
 }
 
 .button {
@@ -46,7 +47,7 @@ body {
   position: absolute;
   padding: 10px;
   left: 50%;
-  bottom: 240px;
+  bottom: -80px;
   width: 100px;
   text-align: center;
   font-family: 'AlphaSmart 3000';
