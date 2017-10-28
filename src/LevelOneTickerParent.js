@@ -1,9 +1,17 @@
 import React, {
     Component
 } from 'react';
+import {
+    Route
+} from 'react-router-dom';
+
+
+import './levelOneInputTicker.css';
+
+import vikingThumbsUp from './vikingthumbs.gif';
+import greatJob from './greatjob.png';
 
 import LevelOneInputTicker from './LevelOneInputTicker';
-
 
 class LevelOneTickerParent extends Component {
 
@@ -11,22 +19,23 @@ class LevelOneTickerParent extends Component {
         super(props);
 
         this.state = {
-            values: []
+            values: [],
+            overlayShown: false,
         };
     }
 
     handleSubmit(event) {
         event.preventDefault();
 
-        var { values: lettersInName } = this.state;
-        var completeName = lettersInName.reduce((a, b) => a + b );
+        // var { values: lettersInName } = this.state;
+        // var completeName = lettersInName.reduce((a, b) => a + b );
 
-        console.log(completeName);
+        this.setState({
+            overlayShown: true
+        });
     }
     
     onChange(inputValue, inputIndex) {
-        console.log('hits');
-        
         this.setState((prevState, props) => {
             var inputValues = prevState.values;
 
@@ -39,8 +48,38 @@ class LevelOneTickerParent extends Component {
     }
 
     render() {
+        var button = null;
+
+        if(this.state.overlayShown) {
+            button = (
+                <div className='level-end-overlay'>
+                    <div className='level-end-overlay-content'>
+                        <img src={greatJob} alt='' style={{maxWidth: '800px', marginLeft: '90px'}}/>
+                        <img src={vikingThumbsUp} alt='' style={{
+                                position: 'absolute',
+                                maxWidth: '130px',
+                                right: '150px',
+                                top: '110px'
+                        }} />
+
+                        <Route render={({ history}) => (
+                            <button className='lvl-one-button' style={{
+                                marginTop: '-20px'
+                            }}
+                            onClick={() => history.push('/world-map')}>NEXT</button>
+                        )} /> 
+
+
+                    </div>
+                </div>
+            )
+        }
+
         return (
-            <form onSubmit={this.handleSubmit.bind(this)}>
+            <form className='lvl-one-input-container' onSubmit={this.handleSubmit.bind(this)}>
+                {button}
+
+                {/* TODO: Could loop and create these?  */}
                 <LevelOneInputTicker inputIndex={0} onChange={this.onChange.bind(this)} />
                 <LevelOneInputTicker inputIndex={1} onChange={this.onChange.bind(this)} />
                 <LevelOneInputTicker inputIndex={2} onChange={this.onChange.bind(this)} />
@@ -49,7 +88,7 @@ class LevelOneTickerParent extends Component {
                 <LevelOneInputTicker inputIndex={5} onChange={this.onChange.bind(this)} />
                 <LevelOneInputTicker inputIndex={6} onChange={this.onChange.bind(this)} />
 
-                <button type='submit'>DONE!</button>
+                <button className='lvl-one-button' type='submit'>DONE!</button>
             </form>
         );
     }

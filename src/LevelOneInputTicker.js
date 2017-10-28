@@ -2,7 +2,9 @@ import React, {
     Component
 } from 'react';
 
-var alphabetMap = 'abcdefghijklmnopqrstuvwxyz_'.split('');
+import './levelOneInputTicker.css';
+
+var alphabetMap = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ_'.split('');
 
 class LevelOneInputTicker extends Component {
 
@@ -12,7 +14,7 @@ class LevelOneInputTicker extends Component {
         console.log(props);
 
         this.state = {
-            inputValue: 'a',
+            inputValue: '_',
             inputValueSet: false,
             inputInterval: ''
         }
@@ -55,7 +57,7 @@ class LevelOneInputTicker extends Component {
 
     render() {
         return (
-            <input type='text' onClick={this.freezeInputValue.bind(this)} onChange={() => {}} value={this.state.inputValue} readOnly />
+            <input type='text' className='lvl-one-input' onClick={this.freezeInputValue.bind(this)} onChange={() => {}} value={this.state.inputValue} readOnly />
         )
     }
 }
