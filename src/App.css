@@ -19,6 +19,10 @@ body {
   bottom: 0;
 }
 
+.floor--alt {
+  background-color: #307E3E;
+}
+
 .ombudsman {
   position: relative;
   background-image:url('viking.gif');

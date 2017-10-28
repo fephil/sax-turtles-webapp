@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom'
 import SplashScreen from './SplashScreen';
 import WorldMap from './WorldMap';
+import LevelOne from './LevelOne';
 import './App.css';
 
 const RouteManager = () => (
@@ -12,6 +13,7 @@ const RouteManager = () => (
     <div>
       <Route exact path="/" component={SplashScreen}/>
       <Route path="/world-map" component={WorldMap}/>
+      <Route path="/level/1" component={LevelOne}/>
     </div>
   </Router>
 )
