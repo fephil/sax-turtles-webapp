@@ -213,3 +213,9 @@ body {
 	-moz-transform: scale(0.55);
 	transform: scale(0.55);
 }
+
+.world-map {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
