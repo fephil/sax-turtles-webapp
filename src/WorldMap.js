@@ -109,7 +109,7 @@ class WorldMap extends Component {
     }
 
     sendMood(moodName) {
-        console.log('sending mood of ...', moodName);
+        apiService.sendMood(moodName, this.props.match.params.gameId)
     }
  
     render() {
