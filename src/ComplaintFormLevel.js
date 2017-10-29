@@ -152,7 +152,7 @@ class ComplaintFormLevel extends Component {
                
                     <textarea className="complaint-input-editor" value={this.state.value} onChange={this.handleChange} onKeyUp={this.handleChange}/>
 
-                    <button className='lvl-one-button' type='submit'>DONE!</button>
+                    <button className='lvl-one-button' style={{marginTop: '60px'}} type='submit'>DONE!</button>
                 </form>
 
                 <div className="floor floor--purple">
