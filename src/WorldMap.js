@@ -94,7 +94,7 @@ class WorldMap extends Component {
             <section className="game-section">
                 <div className='level-overlay'>
                     <div className='level-overlay-inner'>
-                        {<img src={characterImg} alt='character' className={`map-character ` + `lvl-${this.state.gameData.CurrentLevel}-to-${this.state.gameData.CurrentLevel + 1}`} style={mapCharacterCoords[this.state.gameData.CurrentLevel - 1]} /> }
+                        {<img src={characterImg} alt='character' className={`map-character lvl-${this.state.gameData.CurrentLevel}-to-${this.state.gameData.CurrentLevel + 1}`} style={mapCharacterCoords[this.state.gameData.CurrentLevel - 1]} /> }
 
                         { icons }
                     </div>
