@@ -4,7 +4,7 @@ import React, {
 
 import './App.css';
 import questionComplete from './questcomplete.svg';
-import vikingVictory from './vikingvictory.gif';
+import vikingVictory from './vikingvictory2.gif';
 
 import apiService from './apiService';
 
