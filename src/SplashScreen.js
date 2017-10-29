@@ -28,7 +28,7 @@ class SplashScreen extends Component {
                 .then(function(response) {
                     history.push(`/level/1/${response}`);
                 })
-        }, 2250);
+        }, 4250);
     }
 
     render() {

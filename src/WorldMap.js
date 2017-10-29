@@ -5,7 +5,7 @@ import './App.css';
 import worldMap from './worldmap.jpg';
 import levelicon from './levelicon.gif';
 import leveliconcomplete from './leveliconcomplete.gif';
-import character from './viking.gif';
+import characterImg from './viking.gif';
 import apiService from './apiService';
 
 var mapIconCoords = [
@@ -43,6 +43,19 @@ var mapIconCoords = [
     }
 ]
 
+var mapCharacterCoords = [
+    {
+        top: '30px',
+        left: '157px'
+    },
+    {
+        top: '65px',
+        left: '433px'
+        // top: '204px',
+        // left: '200px'
+    }
+]
+
 class WorldMap extends Component {
 
     constructor(props) {
@@ -52,6 +65,7 @@ class WorldMap extends Component {
 
         this.state = {
             gameData: {
+                CurrentLevel: 1,
                 Levels: []
             }
         };
@@ -80,12 +94,9 @@ class WorldMap extends Component {
             <section className="game-section">
                 <div className='level-overlay'>
                     <div className='level-overlay-inner'>
-                        <img src={character} alt='character' className='map-character' style={{
-                            top: '30px',
-                            left: '157px'
-                        }} />
+                        {<img src={characterImg} alt='character' className={`map-character ` + `lvl-${this.state.gameData.CurrentLevel}-to-${this.state.gameData.CurrentLevel + 1}`} style={mapCharacterCoords[this.state.gameData.CurrentLevel - 1]} /> }
 
-                        {icons}
+                        { icons }
                     </div>
                 </div>
                 <img src={worldMap} alt='World Map' className='world-map' />

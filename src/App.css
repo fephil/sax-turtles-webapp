@@ -106,7 +106,7 @@ body {
 
 .overlay.is-shown {
   animation-play-state: running;
-  animation: 2s ease-in fadeIn;
+  animation: 4s ease-in fadeIn;
 }
 
 .logo {
@@ -158,6 +158,57 @@ body {
   max-width: 150px;
   transform: scaleX(-1);
   z-index: 100;
+}
+
+.character-lvl-2 {
+  top: 65px;
+  left: 433px;
+}
+
+.lvl-1-to-2 {
+  /* animation-play-state: running; */
+  animation-fill-mode: forwards;
+  animation: 3s linear .75s lvl-one-to-two;
+}
+
+.lvl-2-to-3 {
+  /* animation-play-state: running; */
+  animation-fill-mode: forwards;
+  animation: 3s linear .75s lvl-two-to-three;
+}
+
+@keyframes lvl-one-to-two {
+  0% {
+    top: 30px;
+    left: 157px;
+  }
+  100% {
+    top: 65px;
+    left: 433px;
+  }
+}
+
+@keyframes lvl-two-to-three {
+  0% {
+    opacity: 1;
+    top: 65px;
+    left: 433px;
+  }
+  20% {
+    opacity: 1;
+    top: 162px;
+    left: 433px;
+  }
+  85% {
+    opacity: 1;
+    top: 162px;
+    left: 224px;
+  }
+  100% {
+    opacity: 1;
+    top: 204px;
+    left: 200px;
+  }
 }
 
 .complaint-input-container {
