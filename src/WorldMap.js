@@ -4,36 +4,78 @@ import React, {
 import './App.css';
 import worldMap from './worldmap.jpg';
 import levelicon from './levelicon.gif';
+import leveliconcomplete from './leveliconcomplete.gif';
 import character from './viking.gif';
 import apiService from './apiService';
-// import leveliconcomplete from './leveliconcomplete.gif';
+
+var mapIconCoords = [
+    {
+        top: '105px',
+        left: '204px'
+    },
+    {
+        top: '135px',
+        left: '477px'
+    },
+    {
+        top: '274px',
+        left: '246px'
+    },
+    {
+        top: '276px',
+        left: '583px'
+    },
+    {
+        top: '195px',
+        left: '812px'
+    },
+    {
+        top: '435px',
+        left: '709px'
+    },
+    {
+        top: '435px',
+        left: '460px'
+    },
+    {
+        top: '460px',
+        left: '223px'
+    }
+]
 
 class WorldMap extends Component {
 
     constructor(props) {
-        super(props);
+        super(props);        
+        
+        var { gameId } = this.props.match.params;
+
         this.state = {
-            gameId: '',
-            currentLevel: '',
-            levels: []
-        }
-    }
+            gameData: {
+                Levels: []
+            }
+        };
 
-    componentDidMount() {
         apiService
-            .makeStartGameRequest()
-            .then(this.setGameState.bind(this))
+            .getGameData(gameId)
+            .then(this.setInitialState.bind(this))
     }
 
-    setGameState(gameData) {
+    setInitialState(response) {
         this.setState({
-            gameId: gameData.GameId,
-            currentLevel: gameData.CurrentLevel,
-            levels: gameData.Levels
-        })  
+            gameData: response
+        });
     }
 
     render() {
+        var icons = this.state.gameData.Levels.map((level) => {
+            var iconSrc = (level.Status === 'Complete') ? leveliconcomplete  : levelicon ;
+
+            return (
+                <img src={iconSrc} alt='character' className='level-icon' key={level.Number - 1} style={mapIconCoords[level.Number - 1]} />
+            )
+        });
+
         return (
             <section className="game-section">
                 <div className='level-overlay'>
@@ -42,38 +84,8 @@ class WorldMap extends Component {
                             top: '30px',
                             left: '157px'
                         }} />
-                        <img src={levelicon} alt='level icon' className='level-icon' style={{
-                            top: '105px',
-                            left: '204px'
-                        }} />
-                        <img src={levelicon} alt='level icon' className='level-icon' style={{
-                            top: '135px',
-                            left: '477px'
-                        }} />
-                        <img src={levelicon} alt='level icon' className='level-icon' style={{
-                            top: '274px',
-                            left: '246px'
-                        }} />
-                        <img src={levelicon} alt='level icon' className='level-icon' style={{
-                            top: '276px',
-                            left: '583px'
-                        }} />
-                        <img src={levelicon} alt='level icon' className='level-icon' style={{
-                            top: '195px',
-                            left: '812px'
-                        }} />
-                        <img src={levelicon} alt='level icon' className='level-icon' style={{
-                            top: '435px',
-                            left: '709px'
-                        }} />
-                        <img src={levelicon} alt='level icon' className='level-icon' style={{
-                            top: '435px',
-                            left: '460px'
-                        }} />
-                        <img src={levelicon} alt='level icon' className='level-icon' style={{
-                            top: '460px',
-                            left: '223px'
-                        }} />
+
+                        {icons}
                     </div>
                 </div>
                 <img src={worldMap} alt='World Map' className='world-map' />

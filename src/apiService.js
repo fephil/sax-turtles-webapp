@@ -16,4 +16,9 @@ apiServiceApi.updateGameData = function(payload) {
     })
 }
 
+apiServiceApi.getGameData = function(gameId) {
+    return fetch(`${API_BASE_URL}/game/${gameId}`)
+        .then(response => response.json())
+}
+
 export default apiServiceApi;
