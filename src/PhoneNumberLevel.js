@@ -2,7 +2,7 @@ import React, {
     Component
 } from 'react';
 import './App.css';
-import levelOneLogo from './levelone.svg';
+import levelOneLogo from './contact.svg';
 import {
     Route
 } from 'react-router-dom';
