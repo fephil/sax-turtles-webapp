@@ -123,13 +123,9 @@ class WorldMap extends Component {
 
 
         var emojisElements = emojis.map((emojiName, index) => {
-            var i = 0;
-
             return (
                 <button className={`emoji emoji--${emojiName}`} key={index} onClick={this.sendMood.bind(this, emojiName)}></button>
             )
-            
-            i++;
         });
 
         return (
