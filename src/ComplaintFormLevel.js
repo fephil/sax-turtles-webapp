@@ -60,7 +60,7 @@ class ComplaintFormLevel extends Component {
 
         if (event.key === ' ') {
             var diceRoll = Math.floor((Math.random() * 10) + 1);
-            if (diceRoll > 2) {
+            if (diceRoll > 8) {
                 var words = wholeInput.split(' ');
                 
                 var lastWord = words[words.length - 2];
