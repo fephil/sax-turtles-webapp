@@ -20,7 +20,8 @@ class GameComplete extends Component {
                             Value: '______'
                         }]
                     }
-                ]
+                ],
+                Moods: []
             }
         }
 
@@ -43,6 +44,13 @@ class GameComplete extends Component {
                 </p>
             )
         });
+
+        var emojiHistory = this.state.gameData.Moods.map(function(moodName) {
+
+            return (
+                <div className={`emoji emoji--inline emoji--${moodName.toLowerCase()}`}></div>
+            );
+        })
 
         return (
             <div>
@@ -72,6 +80,7 @@ class GameComplete extends Component {
                 <img src={questionComplete} alt='' style={{ maxWidth: '500px', marginBottom: '30px'}} />                
 
                 <div className='game-complete-text'>
+
                     <strong style={{ fontSize: '24px'}}>Congratulations {this.state.gameData.Levels[0].Inputs[0].Value}</strong>
                     <p>
                         Your quest is over, and we have received your complaint of thy words.
@@ -82,6 +91,10 @@ class GameComplete extends Component {
                     <p>
                         Now continue on your way
                     </p>
+                    
+                    <div className='emoji-container-end-screen'>
+                        { emojiHistory }
+                    </div>
                 </div>
 
                 <div className="floor floor--alt">

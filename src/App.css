@@ -428,7 +428,7 @@ body {
 
 .vikingVictory {
   position: absolute;
-  left: 750px;
+  left: 1000px;
   bottom: 80px;
   /* transform: scaleX(-1); */
 }
@@ -500,6 +500,20 @@ body {
   background-color: none;
   padding: 0;
   cursor: pointer;
+}
+
+.emoji--inline {
+  display: inline-block;
+}
+
+.emoji-container-end-screen {
+  background: #fff;
+  padding: 5px;
+  background-color: #307E3E;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
 }
 
 .emoji:hover {
