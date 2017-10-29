@@ -36,21 +36,6 @@ class LevelOneTickerParent extends Component {
             overlayShown: true,
             completeName
         });
-        /*
-
-{
-   'GameId': 'f161c5af-44e1-4338-a2d7-04d792eb1d58',
-    'LevelName': 'Surname',
-    'LevelNumber': 1,
-    'Inputs':[
-      {
-        'Name': 'Surname',
-        'Value': 'burdett'
-      }
-    ]
-}
-
-*/
     }
     
     onChange(inputValue, inputIndex) {
