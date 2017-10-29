@@ -4,7 +4,6 @@ import React, {
 
 import './App.css';
 import questionComplete from './questcomplete.svg';
-import scrollGameOver from './scroll-gameover.png';
 import vikingVictory from './vikingvictory.gif';
 
 import apiService from './apiService';
@@ -31,8 +30,6 @@ class GameComplete extends Component {
     }
 
     setInitialState(response) {
-        console.log(response);
-
         this.setState({
             gameData: response
         })
@@ -46,8 +43,6 @@ class GameComplete extends Component {
                 </p>
             )
         });
-
-        console.log(text);
 
         return (
             <section style={{ textAlign: 'center', marginTop: '30px' , display: (this.state.gameData.length === 0) ? 'none' : 'block' }}>
