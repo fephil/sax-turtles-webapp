@@ -26,8 +26,7 @@ class GameComplete extends Component {
         }
 
         apiService
-            //.getGameData(this.props.match.params.gameId)
-            .getGameData('899aa052-63a2-4880-9d11-a4c280582597')
+            .getGameData(this.props.match.params.gameId)
             .then(this.setInitialState.bind(this))
     }
 
@@ -52,6 +51,8 @@ class GameComplete extends Component {
 
         return (
             <section style={{ textAlign: 'center', marginTop: '30px' , display: (this.state.gameData.length === 0) ? 'none' : 'block' }}>
+                <img src={questionComplete} alt='' style={{ maxWidth: '500px', marginBottom: '30px'}} />                
+
                 <div className='game-complete-text'>
                     <strong style={{ fontSize: '24px'}}>Congratulations {this.state.gameData.Levels[0].Inputs[0].Value}</strong>
                     <p>
@@ -65,9 +66,6 @@ class GameComplete extends Component {
                     </p>
                     <button className='button-normal'>EXIT</button>
                 </div>
-                <img src={questionComplete} alt='' style={{ maxWidth: '500px', marginBottom: '30px'}} />                
-                <img src={scrollGameOver} alt='' style={{ maxWidth: '500px', zIndex: '1000', display: 'block', margin: '0 auto' }} />
-
 
                 <div className="floor floor--alt">
                 </div>

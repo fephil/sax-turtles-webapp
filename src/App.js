@@ -17,7 +17,7 @@ const RouteManager = () => (
       <Route path="/world-map/:gameId" component={WorldMap} />
       <Route path="/level/1/:gameId" component={LevelOne} />
       <Route path="/level/2/:gameId" component={ComplaintFormLevel} />
-      <Route path="/complete" component={GameComplete} />
+      <Route path="/complete/:gameId" component={GameComplete} />
     </div>
   </Router>
 )
