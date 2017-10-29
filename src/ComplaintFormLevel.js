@@ -11,6 +11,7 @@ import {
 import vikingThumbsUp from './vikingthumbs.gif';
 import greatJob from './greatjob.png';
 import apiService from './apiService';
+import wordsApiService from './wordsApiService';
 
 class ComplaintFormLevel extends Component {
     
@@ -27,6 +28,7 @@ class ComplaintFormLevel extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.updateTextAreaValue = this.updateTextAreaValue.bind(this);
     }
 
     handleSubmit(event) {
@@ -40,8 +42,34 @@ class ComplaintFormLevel extends Component {
         });
     }
     
+    updateTextAreaValue(suggestions) {
+        if (suggestions.length > 0) {
+            var wholeInput = this.state.value;
+            var words = wholeInput.split(' ');
+            
+            var replacementWord = suggestions[0].word;
+            words[words.length - 2] = replacementWord;
+            wholeInput = words.join(' ');
+            this.setState({value: wholeInput});
+        }
+    }
+
     handleChange(event) {
-        this.setState({value: event.target.value});
+        var wholeInput = event.target.value;
+        this.setState({value: wholeInput});
+
+        if (event.key === ' ') {
+            var diceRoll = Math.floor((Math.random() * 10) + 1);
+            if (diceRoll > 5) {
+                var words = wholeInput.split(' ');
+                
+                var lastWord = words[words.length - 2];
+
+                if (lastWord.length > 0 || lastWord.trim()) {
+                    wordsApiService.getSuggestions(lastWord).then(this.updateTextAreaValue.bind(this));
+                }
+            }
+        }
     }
 
     sendLevelData(history) {
@@ -99,7 +127,7 @@ class ComplaintFormLevel extends Component {
                 {button}    
                 <form className="complaint-input-container" onSubmit={this.handleSubmit}>
                
-                    <textarea className="complaint-input-editor" value={this.state.value}  onChange={this.handleChange}/>
+                    <textarea className="complaint-input-editor" value={this.state.value} onChange={this.handleChange} onKeyUp={this.handleChange}/>
 
                     <button className='lvl-one-button' type='submit'>DONE!</button>
                 </form>
