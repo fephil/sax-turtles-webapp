@@ -6,6 +6,7 @@ import {
 import SplashScreen from './SplashScreen';
 import WorldMap from './WorldMap';
 import LevelOne from './LevelOne';
+import ComplaintFormLevel from './ComplaintFormLevel';
 import './App.css';
 
 const RouteManager = () => (
@@ -14,6 +15,7 @@ const RouteManager = () => (
       <Route exact path="/" component={SplashScreen}/>
       <Route path="/world-map/:gameId" component={WorldMap}/>
       <Route path="/level/1/:gameId" component={LevelOne}/>
+      <Route path="/level/complaint" component={ComplaintFormLevel}/>
     </div>
   </Router>
 )
