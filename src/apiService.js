@@ -21,4 +21,8 @@ apiServiceApi.getGameData = function(gameId) {
         .then(response => response.json())
 }
 
+apiServiceApi.sendMood = function(gameId) {
+    return fetch(`${API_BASE_URL}/mood/${gameId}`)
+}
+
 export default apiServiceApi;
