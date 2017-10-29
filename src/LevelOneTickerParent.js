@@ -81,7 +81,6 @@ class LevelOneTickerParent extends Component {
                 ]
             })
             .then(function() {
-                debugger;
                 history.push(`/world-map/${gameId}`);
             })
     }
