@@ -22,6 +22,7 @@ body {
 
 .floor--alt {
   background-color: #307E3E;
+  z-index: -1;
 }
 
 .floor--purple {
@@ -334,4 +335,48 @@ body {
   margin: 0 auto;
   text-align: center;
   display: block;
+}
+
+.vikingVictory {
+  position: absolute;
+  left: 600px;
+  bottom: 80px;
+  transform: scaleX(-1);
+}
+
+.game-complete-text {
+  width: 420px;
+  position: absolute;
+  height: 400px;
+  left: 510px;
+  top: 160px;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'AlphaSmart 3000';  
+}
+
+.button-normal {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 0;
+  outline: 0;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  font-family: 'AlphaSmart 3000';
+  font-size: 20px;
+  background-color: #EAD477;
+  border: 4px solid #fb5800;
+  box-shadow: -8px 8px 0px 0px #000;
+  cursor: pointer;
+}
+
+.button-normal:hover,
+.button-normal:active,
+.button-normal:focus {
+  box-shadow: none;
+  transform: translate(-15%, 8px);
 }
