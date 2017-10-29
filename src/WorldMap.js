@@ -1,6 +1,9 @@
 import React, {
     Component
 } from 'react';
+import {
+    Route
+} from 'react-router-dom';
 import './App.css';
 import worldMap from './worldmap.jpg';
 import levelicon from './levelicon.gif';
@@ -81,6 +84,12 @@ class WorldMap extends Component {
         });
     }
 
+    characterOnClick(history) {
+        console.log(this.state.gameData);
+
+        history.push(`/level/${this.state.gameData.CurrentLevel}/${this.state.gameData.GameId}`)
+    }
+
     render() {
         var icons = this.state.gameData.Levels.map((level) => {
             var iconSrc = (level.Status === 'Complete') ? leveliconcomplete  : levelicon ;
@@ -94,8 +103,14 @@ class WorldMap extends Component {
             <section className="game-section">
                 <div className='level-overlay'>
                     <div className='level-overlay-inner'>
-                        {<img src={characterImg} alt='character' className={`map-character lvl-${this.state.gameData.CurrentLevel}-to-${this.state.gameData.CurrentLevel + 1}`} style={mapCharacterCoords[this.state.gameData.CurrentLevel - 1]} /> }
-
+                        <Route render={({ history}) => (
+                            <img src={characterImg} 
+                                alt='character' 
+                                className={`map-character lvl-${this.state.gameData.CurrentLevel - 1}-to-${this.state.gameData.CurrentLevel}`} 
+                                style={mapCharacterCoords[this.state.gameData.CurrentLevel - 1]} 
+                                onClick={this.characterOnClick.bind(this, history)}
+                            />
+                        )} /> 
                         { icons }
                     </div>
                 </div>
