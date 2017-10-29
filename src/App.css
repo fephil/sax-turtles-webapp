@@ -166,6 +166,11 @@ body {
   left: 433px;
 }
 
+.character-lvl-3 {
+  top: 204px;
+  left: 200px;
+}
+
 .lvl-1-to-2 {
   /* animation-play-state: running; */
   animation-fill-mode: forwards;

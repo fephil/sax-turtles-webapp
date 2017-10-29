@@ -54,8 +54,10 @@ var mapCharacterCoords = [
     {
         top: '65px',
         left: '433px'
-        // top: '204px',
-        // left: '200px'
+    },
+    {
+        top: '204px',
+        left: '200px'
     }
 ]
 
@@ -85,9 +87,11 @@ class WorldMap extends Component {
     }
 
     characterOnClick(history) {
-        console.log(this.state.gameData);
-
-        history.push(`/level/${this.state.gameData.CurrentLevel}/${this.state.gameData.GameId}`)
+        if(this.state.gameData.CurrentLevel > this.state.gameData.Levels.length) {
+            history.push(`/complete/${this.state.gameData.GameId}`)
+        } else {
+            history.push(`/level/${this.state.gameData.CurrentLevel}/${this.state.gameData.GameId}`)
+        }
     }
 
     render() {
