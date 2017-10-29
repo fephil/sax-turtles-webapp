@@ -109,9 +109,7 @@ class PhoneNumberLevel extends Component {
         }
 
         return (
-            <section style={{ textAlign: 'center', marginTop: '150px' }}>
-                <img src={levelOneLogo} alt='' style={{ maxWidth: '420px', marginBottom: '60px'}} />                
-                {button}    
+            <div>
                 <div className='clouds-container'>
                     <div className="x1">
                         <div className="cloud"></div>
@@ -133,6 +131,9 @@ class PhoneNumberLevel extends Component {
                         <div className="cloud"></div>
                     </div>
                 </div>
+            <section style={{ textAlign: 'center', paddingTop: '150px', position: 'relative', height: '100vh', boxSizing: 'border-box' }}>
+                <img src={levelOneLogo} alt='' style={{ maxWidth: '600px', marginBottom: '60px'}} />                
+                {button}    
                 <div className="phone-number-container ">
                     <textarea className="speechbubble-phone" value={this.state.phoneNumber} readOnly />
                     <button className='lvl-phone-button' onClick={this.startRecording.bind(this)}>RECORD</button>
@@ -146,6 +147,7 @@ class PhoneNumberLevel extends Component {
                 </div>
                 
             </section>
+            </div>
         )
     }
 }

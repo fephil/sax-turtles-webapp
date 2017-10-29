@@ -45,10 +45,10 @@ class GameComplete extends Component {
             )
         });
 
-        var emojiHistory = this.state.gameData.Moods.map(function(moodName) {
+        var emojiHistory = this.state.gameData.Moods.map(function(moodName, index) {
 
             return (
-                <div className={`emoji emoji--inline emoji--${moodName.toLowerCase()}`}></div>
+                <div className={`emoji emoji--inline emoji--${moodName.toLowerCase()}`} key={index}></div>
             );
         })
 

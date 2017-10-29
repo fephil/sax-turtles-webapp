@@ -25,7 +25,7 @@ apiServiceApi.sendMood = function(moodName, gameId) {
     return fetch(`${API_BASE_URL}/mood/${gameId}`, {
         method: 'post',
         headers: {
-            'Content-type': 'application/text; charset=UTF-8'
+            'Content-type': 'text/plain; charset=UTF-8'
         },
         body: moodName
     });

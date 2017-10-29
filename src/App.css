@@ -504,6 +504,7 @@ body {
 
 .emoji--inline {
   display: inline-block;
+  cursor: default;
 }
 
 .emoji-container-end-screen {
