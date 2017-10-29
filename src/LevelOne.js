@@ -8,6 +8,12 @@ import levelOneLogo from './levelone.svg';
 import LevelOneTickerParent from './LevelOneTickerParent';
 
 class LevelOne extends Component {
+    constructor(props) {
+        super(props);
+
+        console.log(props);
+    }
+
     render() {
         return (
             <section style={{ textAlign: 'center', marginTop: '60px' }}>
@@ -15,7 +21,7 @@ class LevelOne extends Component {
 
                 <img src={levelOneLogo} alt='' style={{ maxWidth: '420px', marginBottom: '60px'}} />                
 
-                <LevelOneTickerParent />
+                <LevelOneTickerParent gameId={this.props.match.params.gameId} />
 
                 <div className="floor"></div>
             </section>

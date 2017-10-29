@@ -6,6 +6,7 @@ import logo from './logo.svg';
 import {
     Route
 } from 'react-router-dom';
+import apiService from './apiService';
 
 class SplashScreen extends Component {
     constructor(props) {
@@ -21,7 +22,13 @@ class SplashScreen extends Component {
             showOverlay: true
         });
 
-        setTimeout(() => { history.push('/world-map')}, 2250);
+        setTimeout(() => {
+            apiService
+                .makeStartGameRequest()
+                .then(function(response) {
+                    history.push(`/level/1/${response}`);
+                })
+        }, 2250);
     }
 
     render() {

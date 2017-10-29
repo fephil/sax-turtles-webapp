@@ -12,6 +12,7 @@ import vikingThumbsUp from './vikingthumbs.gif';
 import greatJob from './greatjob.png';
 
 import LevelOneInputTicker from './LevelOneInputTicker';
+import apiService from './apiService';
 
 class LevelOneTickerParent extends Component {
 
@@ -21,18 +22,35 @@ class LevelOneTickerParent extends Component {
         this.state = {
             values: [],
             overlayShown: false,
+            completeName: ''
         };
     }
 
     handleSubmit(event) {
         event.preventDefault();
 
-        // var { values: lettersInName } = this.state;
-        // var completeName = lettersInName.reduce((a, b) => a + b );
+        var { values: lettersInName } = this.state;
+        var completeName = lettersInName.reduce((a, b) => a + b );
 
         this.setState({
-            overlayShown: true
+            overlayShown: true,
+            completeName
         });
+        /*
+
+{
+   'GameId': 'f161c5af-44e1-4338-a2d7-04d792eb1d58',
+    'LevelName': 'Surname',
+    'LevelNumber': 1,
+    'Inputs':[
+      {
+        'Name': 'Surname',
+        'Value': 'burdett'
+      }
+    ]
+}
+
+*/
     }
     
     onChange(inputValue, inputIndex) {
@@ -45,6 +63,27 @@ class LevelOneTickerParent extends Component {
                 values: inputValues
             }
         });
+    }
+
+    sendLevelData(history, props) {
+        var { gameId } = props;
+        
+        apiService 
+            .updateGameData({
+                GameId: gameId,
+                LevelName: 'Surname',
+                LevelNumber: 1,
+                Inputs: [
+                    {
+                        Name: 'Surname',
+                        Value: this.state.completeName
+                    }
+                ]
+            })
+            .then(function() {
+                debugger;
+                history.push(`/world-map/${gameId}`);
+            })
     }
 
     render() {
@@ -66,7 +105,8 @@ class LevelOneTickerParent extends Component {
                             <button className='lvl-one-button' style={{
                                 marginTop: '-20px'
                             }}
-                            onClick={() => history.push('/world-map')}>NEXT</button>
+                            /* onClick={() => history.push('/world-map')}>NEXT</button> */
+                            onClick={this.sendLevelData.bind(this, history, this.props)}>NEXT</button>
                         )} /> 
 
 
