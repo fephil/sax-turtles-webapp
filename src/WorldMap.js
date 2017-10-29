@@ -58,6 +58,10 @@ var mapCharacterCoords = [
     {
         top: '204px',
         left: '200px'
+    }, 
+    {
+        top: '170px',
+        left: '560px'
     }
 ]
 

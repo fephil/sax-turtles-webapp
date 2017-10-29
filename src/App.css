@@ -236,6 +236,32 @@ body {
   animation: 3s linear .75s lvl-two-to-three;
 }
 
+.lvl-3-to-4 {
+  /* animation-play-state: running; */
+  animation-fill-mode: forwards;
+  animation: 3s linear .75s lvl-three-to-four;
+}
+
+@keyframes lvl-three-to-four {
+  0% {
+    top: 204px;
+    left: 200px;
+  }
+  20% {
+    top: 240px;
+    left: 250px;
+  }
+  80% {
+    top: 240px;
+    left: 480px;
+  }
+  100% {
+    top: 170px;
+    left: 560px;
+  }
+}
+
+
 @keyframes lvl-one-to-two {
   0% {
     top: 30px;
