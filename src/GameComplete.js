@@ -55,7 +55,7 @@ class GameComplete extends Component {
                 <div className='game-complete-text'>
                     <strong style={{ fontSize: '24px'}}>Congratulations {this.state.gameData.Levels[0].Inputs[0].Value}</strong>
                     <p>
-                        Your quest is over, and we have received your complaint of thy words, 
+                        Your quest is over, and we have received your complaint of thy words.
                     </p>
 
                     { text }
