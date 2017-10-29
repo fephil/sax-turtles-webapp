@@ -10,7 +10,7 @@ import LevelOneTickerParent from './LevelOneTickerParent';
 class LevelOne extends Component {
     render() {
         return (
-            <section style={{ textAlign: 'center', marginTop: '60px' }}>
+            <section style={{ textAlign: 'center', marginTop: '100px' }}>
                 {/* TODO: move this into own component */}
 
                 <img src={levelOneLogo} alt='' style={{ maxWidth: '420px', marginBottom: '60px'}} />                
