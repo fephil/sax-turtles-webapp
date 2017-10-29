@@ -56,11 +56,11 @@ class LevelOneTickerParent extends Component {
         apiService 
             .updateGameData({
                 GameId: gameId,
-                LevelName: 'Surname',
+                LevelName: 'Name',
                 LevelNumber: 1,
                 Inputs: [
                     {
-                        Name: 'Surname',
+                        Name: 'Name',
                         Value: this.state.completeName
                     }
                 ]
