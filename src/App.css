@@ -452,3 +452,56 @@ body {
   box-shadow: none;
   transform: translate(-15%, 8px);
 }
+
+.emoji-faces {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'AlphaSmart 3000';
+  padding: 20px;
+  background: #fff;
+}
+
+.emoji {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 20px;
+  background-size: contain;
+  background-color: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.emoji:hover {
+  background-color: #eee;
+}
+
+.emoji + .emoji {
+  margin-left: 10px;
+}
+
+.emoji--dispair {
+  background-image: url('./emoji/dispair.jpeg');
+}
+.emoji--bemused {
+  background-image: url('./emoji/bemused.jpeg');
+}
+.emoji--crying {
+  background-image: url('./emoji/crying.jpeg');
+}
+.emoji--fuming {
+  background-image: url('./emoji/fuming.jpeg');
+}
+.emoji--pissed {
+  background-image: url('./emoji/pissed.jpeg');
+}
+.emoji--sad {
+  background-image: url('./emoji/sad.jpeg');
+}
+.emoji--happy {
+  background-image: url('./emoji/happy.jpeg');
+}

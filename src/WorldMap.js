@@ -61,6 +61,16 @@ var mapCharacterCoords = [
     }
 ]
 
+var emojis = [
+    'bemused',
+    'crying',
+    'dispair',
+    'fuming',
+    'happy',
+    'pissed',
+    'sad'
+];
+
 class WorldMap extends Component {
 
     constructor(props) {
@@ -94,6 +104,10 @@ class WorldMap extends Component {
         }
     }
 
+    sendMood(moodName) {
+        console.log('sending mood of ...', moodName);
+    }
+ 
     render() {
         var icons = this.state.gameData.Levels.map((level) => {
             var iconSrc = (level.Status === 'Complete') ? leveliconcomplete  : levelicon ;
@@ -101,6 +115,17 @@ class WorldMap extends Component {
             return (
                 <img src={iconSrc} alt='character' className='level-icon' key={level.Number - 1} style={mapIconCoords[level.Number - 1]} />
             )
+        });
+
+
+        var emojisElements = emojis.map((emojiName, index) => {
+            var i = 0;
+
+            return (
+                <button className={`emoji emoji--${emojiName}`} key={index} onClick={this.sendMood.bind(this, emojiName)}></button>
+            )
+            
+            i++;
         });
 
         return (
@@ -119,6 +144,11 @@ class WorldMap extends Component {
                     </div>
                 </div>
                 <img src={worldMap} alt='World Map' className='world-map' />
+                <div className='emoji-faces'>
+                    <p style={{marginTop: '0px'}}>HEY! We hope you're having a fun time!</p>
+                    <p>How are you feeling?</p>
+                    { emojisElements }
+                </div>
             </section>
         )
     }
