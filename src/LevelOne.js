@@ -3,8 +3,6 @@ import React, {
 } from 'react';
 import './App.css';
 import levelOneLogo from './levelone.svg';
-// import apiService from './apiService';
-// import LevelOneInputTicker from './LevelOneInputTicker';
 import LevelOneTickerParent from './LevelOneTickerParent';
 
 class LevelOne extends Component {
