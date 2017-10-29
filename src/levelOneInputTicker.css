@@ -24,6 +24,11 @@
     cursor: pointer;
 }
 
+.lvl-one-input.is-selected {
+    background: #807F80;
+    color: #FFF;
+}
+
 .lvl-one-input-outer {
     display: inline;
     position: relative;

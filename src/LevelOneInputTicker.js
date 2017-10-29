@@ -9,12 +9,18 @@ var alphabetMap = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ_'.split('');
 class LevelOneInputTicker extends Component {
 
     constructor(props) {
+        function getRandomNumberFromRange(min, max) {
+            return Math.floor((Math.random() * (max - min) + min));  
+        }
+
         super(props);
 
         this.state = {
             inputValue: '_',
             inputValueSet: false,
-            inputInterval: ''
+            inputInterval: '',
+            letterIndex: getRandomNumberFromRange(0, alphabetMap.length - 1),
+            isSelected: false
         }
     }
 
@@ -25,7 +31,7 @@ class LevelOneInputTicker extends Component {
     }
 
     setInputValue() {
-        var inputValue = this.getRandomLetterFromAlphabet();
+        var inputValue = this.getNextLetterOfTheAlphabet();
 
         this.setState({
             inputValue
@@ -35,7 +41,8 @@ class LevelOneInputTicker extends Component {
     freezeInputValue() {
         this.setState((prevState, props) => {
             return { 
-                inputInterval: clearInterval(prevState.inputInterval)
+                inputInterval: clearInterval(prevState.inputInterval),
+                isSelected: true
             }
         });
 
@@ -45,18 +52,28 @@ class LevelOneInputTicker extends Component {
         this.props.onChange(inputValue, inputIndex);        
     }
 
-    getRandomLetterFromAlphabet() {    
-        function getRandomNumberFromRange(min, max) {
-            return Math.floor((Math.random() * (max - min) + min));
-        }
+    getNextLetterOfTheAlphabet() {    
+        var letterOfTheAlphabet = alphabetMap[this.state.letterIndex];
 
-        return alphabetMap[getRandomNumberFromRange(0, 25)]
+        this.setState((prevState, props) => {
+            var newLetterIndex = prevState.letterIndex + 1;
+
+            if(newLetterIndex === alphabetMap.length) {
+                newLetterIndex = 0;
+            }
+
+            return {
+                letterIndex: newLetterIndex
+            }
+          });
+
+        return letterOfTheAlphabet;
     }   
 
     render() {
         return (
             <div className='lvl-one-input-outer'>
-                <input type='text' className='lvl-one-input' onClick={this.freezeInputValue.bind(this)} onChange={() => {}} value={this.state.inputValue} readOnly />
+                <input type='text' className={'lvl-one-input ' + ((this.state.isSelected) ? 'is-selected' : '') } onClick={this.freezeInputValue.bind(this)} onChange={() => {}} value={this.state.inputValue} readOnly />
             </div>
         )
     }
