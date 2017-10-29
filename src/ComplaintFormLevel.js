@@ -125,7 +125,30 @@ class ComplaintFormLevel extends Component {
             <section style={{ textAlign: 'center', marginTop: '60px' }}>
                 <img src={levelOneLogo} alt='' style={{ maxWidth: '420px', marginBottom: '60px'}} />                
                 {button}    
-                <form className="complaint-input-container" onSubmit={this.handleSubmit}>
+
+                <div className='clouds-container'>
+                    <div className="x1">
+                        <div className="cloud"></div>
+                    </div>
+
+                    <div className="x2">
+                        <div className="cloud"></div>
+                    </div>
+
+                    <div className="x3">
+                        <div className="cloud"></div>
+                    </div>
+
+                    <div className="x4">
+                        <div className="cloud"></div>
+                    </div>
+
+                    <div className="x5">
+                        <div className="cloud"></div>
+                    </div>
+                </div>
+
+                <form className={'complaint-input-container'  + ((this.state.overlayShown) ? 'overlay-show' : '')} onSubmit={this.handleSubmit}>
                
                     <textarea className="complaint-input-editor" value={this.state.value} onChange={this.handleChange} onKeyUp={this.handleChange}/>
 

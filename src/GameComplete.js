@@ -45,7 +45,30 @@ class GameComplete extends Component {
         });
 
         return (
-            <section style={{ textAlign: 'center', marginTop: '30px' , display: (this.state.gameData.length === 0) ? 'none' : 'block' }}>
+            <div>
+                <div className='clouds-container'>
+                    <div className="x1">
+                        <div className="cloud"></div>
+                    </div>
+
+                    <div className="x2">
+                        <div className="cloud"></div>
+                    </div>
+
+                    <div className="x3">
+                        <div className="cloud"></div>
+                    </div>
+
+                    <div className="x4">
+                        <div className="cloud"></div>
+                    </div>
+
+                    <div className="x5">
+                        <div className="cloud"></div>
+                    </div>
+                </div>
+            <section style={{ position: 'relative', height: '100vh', textAlign: 'center', marginTop: '30px' , display: (this.state.gameData.length === 0) ? 'none' : 'block' }}>
+
                 <img src={questionComplete} alt='' style={{ maxWidth: '500px', marginBottom: '30px'}} />                
 
                 <div className='game-complete-text'>
@@ -59,7 +82,6 @@ class GameComplete extends Component {
                     <p>
                         Now continue on your way
                     </p>
-                    <button className='button-normal'>EXIT</button>
                 </div>
 
                 <div className="floor floor--alt">
@@ -67,6 +89,7 @@ class GameComplete extends Component {
                 <img src={vikingVictory} alt='' className='vikingVictory' />
                 
             </section>
+            </div>
         )
     }
 }

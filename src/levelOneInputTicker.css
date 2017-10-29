@@ -3,6 +3,11 @@
 .lvl-one-input-container {
     margin: 0 auto;
     text-align: center;
+    position: relative;
+}
+
+.lvl-one-input-container.overlay-show {
+    position: static;
 }
 
 .lvl-one-input {

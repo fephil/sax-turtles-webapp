@@ -87,7 +87,9 @@ class LevelOneTickerParent extends Component {
 
                         <Route render={({ history}) => (
                             <button className='lvl-one-button' style={{
-                                marginTop: '-20px'
+                                position: 'relative',
+                                marginTop: '-20px',
+                                zIndex: 1000
                             }}
                             /* onClick={() => history.push('/world-map')}>NEXT</button> */
                             onClick={this.sendLevelData.bind(this, history, this.props)}>NEXT</button>
@@ -100,7 +102,7 @@ class LevelOneTickerParent extends Component {
         }
 
         return (
-            <form className='lvl-one-input-container' onSubmit={this.handleSubmit.bind(this)}>
+            <form className={'lvl-one-input-container ' + ((this.state.overlayShown) ? 'overlay-show' : '')} onSubmit={this.handleSubmit.bind(this)}>
                 {button}
 
                 {/* TODO: Could loop and create these?  */}
