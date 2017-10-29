@@ -79,7 +79,7 @@ class ComplaintFormLevel extends Component {
             .updateGameData({
                 GameId: gameId,
                 LevelName: 'Complaint',
-                LevelNumber: 2,
+                LevelNumber: 3,
                 Inputs: [
                     {
                         Name: 'Complaint',

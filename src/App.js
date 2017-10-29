@@ -8,6 +8,7 @@ import WorldMap from './WorldMap';
 import LevelOne from './LevelOne';
 import ComplaintFormLevel from './ComplaintFormLevel';
 import GameComplete from './GameComplete';
+import PhoneNumberLevel from './PhoneNumberLevel';
 import './App.css';
 
 const RouteManager = () => (
@@ -16,8 +17,9 @@ const RouteManager = () => (
       <Route exact path="/" component={SplashScreen} />
       <Route path="/world-map/:gameId" component={WorldMap} />
       <Route path="/level/1/:gameId" component={LevelOne} />
-      <Route path="/level/2/:gameId" component={ComplaintFormLevel} />
+      <Route path="/level/3/:gameId" component={ComplaintFormLevel} />
       <Route path="/complete/:gameId" component={GameComplete} />
+      <Route path="/level/2/:gameId" component={PhoneNumberLevel} />
     </div>
   </Router>
 )
