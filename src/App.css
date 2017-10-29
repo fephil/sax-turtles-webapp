@@ -11,6 +11,7 @@ body {
   /* TODO: Maybe look at this dirty hack */
   overflow: hidden;
 }
+
 .floor {
   background-color: #86614C;
   width: 100%;
@@ -23,6 +24,10 @@ body {
   background-color: #307E3E;
 }
 
+.floor--purple {
+  background-color: #4B3967
+}
+
 .ombudsman {
   position: relative;
   background-image:url('viking.gif');
@@ -30,6 +35,15 @@ body {
   left: 60%;
   width: 346px;
   height: 346px;
+}
+
+.ombudsman-typing {
+  position: relative;
+  background-image:url('vikingtyping.gif');
+  top: -173px;
+  left: 60%;
+  width: 251px;
+  height: 175px;
 }
 
 .speechbubble {
@@ -144,6 +158,27 @@ body {
   max-width: 150px;
   transform: scaleX(-1);
   z-index: 100;
+}
+
+.complaint-input-container {
+  width: 450px;
+  height: 250px;
+  background-color: #000;
+  margin: 0 auto;
+  display: block;
+}
+
+.complaint-input-editor {
+  position: relative;
+  width: 435px;
+  height: 235px;
+  background-color: white;
+  margin: -20px 15px;
+  text-align: top;
+  font-size: 18px;
+  font-family: 'AlphaSmart 3000';
+  padding: 10px;
+  resize: none;
 }
 
 /* IE 10 / Chrome */
